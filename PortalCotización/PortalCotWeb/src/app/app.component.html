@@ -1,0 +1,17 @@
+<div class="content">
+  <router-outlet>
+  <mat-toolbar class="toolbar">
+      <span><img class="img-responsive" src="../assets/isbel2.jpg"></span>
+      <span style="padding-right: 10px;"> Portal Cotización  </span>
+      <div class="toolbar" *ngIf="service.isAdmin && service.visible">
+        <a mat-button href="#/margenes">Gestión de Márgenes</a>
+        <a mat-button href="#/productos">Gestión de Productos</a>
+      </div>
+      <div *ngIf="service.visible">
+        <a mat-button href="#/cotización">Cotización</a>
+        <a mat-button href="#/cotizaciones">Gestión de Cotizaciones</a>
+        <button mat-raised-button (click)="logOut()">Log out</button>
+      </div>
+  </mat-toolbar>
+  </router-outlet>
+</div>

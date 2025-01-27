@@ -1,0 +1,83 @@
+th, td{
+    width: 70px;
+    min-width: 50px;
+}
+
+.bigCell{
+    width: 260px;
+    min-width: 140px;
+}
+
+table td, table th{
+    text-align: center;
+}
+
+table{
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+.mat-form-field {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 70px;
+}
+
+.leftcol{
+    width: 55%;
+    float: left;
+}
+
+.rightcol{
+    width: 45%;
+    float: right;
+}
+
+.example-card {
+    width: 500px;
+    margin-top: 10px;
+    position: fixed;
+  }
+
+  .list-viewer-wrapper {
+    border: 1px solid rgba(0, 0, 0, .03);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+    margin: 4px;
+}
+
+.list-header-title {
+    color: rgba(0, 0, 0, .54);
+    background: rgba(0, 0, 0, .03);
+    padding: 8px 20px;
+    font-weight: bold;
+}
+
+.mat-option{
+    text-align: right;
+    height: 32px;
+}
+
+.mat-button{
+    background-color: lavender;
+}
+
+.number-cell {
+    text-align: right !important;
+}
+
+.custom-grid{
+    margin-left: 200px;
+    margin-top: 5px;
+}
+
+.btn{
+    margin-right: 2px;
+}
+
+.botones{
+    margin-right: 40%;
+    position: right;
+    margin-top: 10px;
+}

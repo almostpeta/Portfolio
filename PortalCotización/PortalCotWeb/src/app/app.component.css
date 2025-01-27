@@ -1,0 +1,10 @@
+.img-responsive {
+    height: 64px;
+    width: 170px;
+    padding-right: 16px;
+  }
+.toolbar{
+  padding: 0%;
+  background-color: steelblue;
+  color: aliceblue;
+}

@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title">Guardar Cotizacion</h4>
+</div>
+<div class="modal-body">
+    <div class="container">
+        <label>
+        Cliente
+        </label>
+        <input  [(ngModel)]="cliente" type="text"><br />
+        <label>
+        Descripcion
+        </label>
+        <input [(ngModel)]="comentario" type="text"><br />
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="decline()">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="accept()">Guardar</button>
+</div>

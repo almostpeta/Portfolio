@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-toolbar>Log in</mat-toolbar>
+  <form name= "frmLogin" [formGroup]="user" #frmLogin="ngForm" class="example-form" (ngSubmit)="login(frmLogin)">
+      <mat-error *ngIf="incorrectCredentials == true">
+          Incorrect user or password. Try again!
+    </mat-error>
+    <!--Username-->
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Username"  formControlName="nombre">
+      <mat-error *ngIf="!user.get('nombre').hasError('required')">
+        Please enter a valid Username
+      </mat-error>
+      <mat-error *ngIf="user.get('nombre').hasError('required')">
+        Username is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <!--Password-->
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Contraseña" formControlName="password" type="password">
+        <mat-error *ngIf="user.get('password').hasError('required')">
+                    Password is <strong>required</strong>
+        </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Log in</button>
+  </form>
+</div>

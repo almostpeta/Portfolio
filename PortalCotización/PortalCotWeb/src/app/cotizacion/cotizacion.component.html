@@ -1,0 +1,111 @@
+<div [hidden]="!service.visible">
+    <div class="leftcol">
+        <!-- Filtros-->
+        <div id="filters">
+            <mat-form-field class="filter">
+                <input id="filtroCodigo" matInput (keyup)="aplicarFiltro()" placeholder="codigo">
+            </mat-form-field>
+            <mat-form-field class="filter">
+                <input id="filtroNombre" matInput (keyup)="aplicarFiltro()" placeholder="nombre">
+            </mat-form-field>
+            <mat-form-field class="filter">
+                <input id="filtroComentario" matInput (keyup)="aplicarFiltro()" placeholder="comentario">
+            </mat-form-field>
+            <mat-checkbox color="primary"  [(ngModel)]="redundancia" (change)="calcularLicencias()">Redundancia</mat-checkbox>
+            <mat-form-field>
+                <mat-label>Tipo Producto</mat-label>
+                <mat-select (selectionChange)="aplicarFiltro()" [(ngModel)]="selectOption">
+                    <mat-option value="Todos">Todos</mat-option>
+                    <mat-option value="Software">Software</mat-option>
+                    <mat-option value="Hardware">Hardware</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <!-- Tabla -->
+        <table mat-table  #table id="table" [dataSource]="productos" matSort class="mat-elevation-z8">
+            <ng-container matColumnDef="codigo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+                <td mat-cell *matCellDef="let producto"> {{producto.codigo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="nombre">
+                <th class="bigCell" mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td class="bigCell" mat-cell *matCellDef="let producto"> {{producto.articulo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="comentario">
+                <th class="bigCell" mat-header-cell *matHeaderCellDef mat-sort-header> Comentario </th>
+                <td class="bigCell" mat-cell *matCellDef="let producto"> {{producto.comentario}} </td>
+            </ng-container>
+            <ng-container matColumnDef="cantidad">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad </th>
+                <td mat-cell *matCellDef="let producto"> 
+                <mat-form-field>  
+                    <input matInput input matInput placeholder="Cantidad"
+                    (focusout)="validarCalcular(producto)" (keyup.enter)="validarCalcular(producto)" 
+                    [(ngModel)]="producto.cantidad"> 
+                </mat-form-field> 
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="precioUnitario">
+                <th class="thNumber" mat-header-cell *matHeaderCellDef mat-sort-header> Precio Unitario </th>
+                <td class="thNumber" mat-cell *matCellDef="let producto"> {{producto.precio}} </td>
+            </ng-container>
+            <ng-container matColumnDef="precioTotal">
+                <th class="thNumber" mat-header-cell *matHeaderCellDef mat-sort-header> Precio Total </th>
+                <td class="thNumber" mat-cell *matCellDef="let producto"> {{producto.precioTotal}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 20, 50]" showFirstLastButtons></mat-paginator>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="rightcol">
+        <!--Tarjeta Resumen-->
+        <mat-card id="resumen" class="example-card">
+            <div class="list-header-title">Resumen de la Cotización</div>
+            <br>
+            <mat-card-content [style.overflow]="'auto'" [style.height.px]="'400'">
+                <mat-option *ngFor="let producto of carrito" [value]="producto">
+                    {{producto.codigo +" - "+ producto.articulo + " " + producto.precio + " USD x" + producto.cantidad
+                    + " = " +producto.precioTotal + " USD"}} 
+                </mat-option>
+            </mat-card-content>
+            <!--<strong><mat-label>{{"Total a Isbel: " + precioTotalAIsbel + "$"}}</mat-label></strong>-->
+            <strong><mat-label>{{"Total:  " + precioTotalACliente + " USD  Precio Mensual:  " + precioTotalMensual + " USD"}}</mat-label></strong>
+            <mat-card-actions>
+                <button mat-button (click)="exportar()">Exportar</button>
+                <button mat-button (click)="showOrHideMargenes()" >Editar Margenes</button>
+                <button mat-button (click)="guardarCotizacion()" >Guardar Cotizacion</button>
+            </mat-card-actions>
+        </mat-card>
+        <!--Tarjeta edicion de margenes-->
+        <mat-card id="margenes" class="example-card" hidden>
+            <div class="list-header-title">Margenes de la Cotización
+            </div>
+            <br>
+            <mat-card-content [style.overflow]="'auto'" [style.height.px]="'424'">
+                <table id="margenesTable" mat-table  #table [dataSource]="margenes" class="mat-elevation-z8 margenesTable">
+                    <ng-container matColumnDef="descripcion">
+                        <th class="bigCell" mat-header-cell *matHeaderCellDef> Margen </th>
+                        <td class="bigCell" mat-cell *matCellDef="let margen"> {{margen.descripcion}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="margen">
+                        <th class="bigCell" mat-header-cell *matHeaderCellDef> Valor (%) </th>
+                        <td class="bigCell" mat-cell *matCellDef="let margen">
+                            <input matInput input matInput placeholder="Valor"
+                            (focusout)="validarMargen(margen)" (keyup.enter)="validarMargen(margen)"
+                            [(ngModel)]="margen.margenEstandar"> 
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedMargenes"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedMargenes;"></tr>
+                </table>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="actualizarProductos(true)">Guardar y volver</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

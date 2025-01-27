@@ -1,0 +1,22 @@
+<div *ngIf="service.visible">
+<div class="text-right botones" >
+    <button class="btn btn-primary" (click)="getMargenes()"><i class="fa fa-refresh" ></i></button>
+    <button class="btn btn-primary" (click)="save()"><i class="fa fa-floppy-o"></i></button>
+    <button class="btn btn-primary" (click)="addNew()" ><i class="fa fa-plus" ></i></button>
+    <button class="btn btn-primary" (click)="remove()"><i class="fa fa-trash"></i></button>    
+</div>
+<div>
+<ag-grid-angular
+    style="width: 40%; height: 500px;"
+    class="ag-theme-balham custom-grid"
+    [enableSorting]="true"
+    [enableFilter]="true" 
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [gridOptions]="gridOptions"
+    (gridReady)="onGridReady($event)"
+    (rowValueChanged)="onSelectionChanged()"
+    (cellValueChanged)="onCellValueChanged($event)">
+</ag-grid-angular>
+</div>
+</div>

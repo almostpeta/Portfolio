@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js"
+  },
+  "author": "portalCoticación",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^8.0.1",
+    "@hapi/hapi": "^18.4.0",
+    "@hapi/joi": "^16.1.5",
+    "bcryptjs": "^2.4.3",
+    "blipp": "^4.0.1",
+    "dotenv": "^8.1.0",
+    "hapi-auth-jwt2": "^8.6.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.3",
+    "mongoose-hidden": "^1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

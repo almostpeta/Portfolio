@@ -1,0 +1,39 @@
+td{
+    width: 70px;
+    min-width: 50px;
+}
+table th{
+    width: 70px;
+    min-width: 50px;
+}
+
+.thNumber{
+    text-align: right !important;
+}
+
+.mediumCell{
+    width: 200px;
+    min-width: 160px;
+}
+
+.bigCell{
+    width: 260px;
+    min-width: 140px;
+}
+
+table td, table th{
+    text-align: left;
+}
+
+table{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.filter{
+    font-size: 14px;
+    width: 15%;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: inline-block !important;
+}

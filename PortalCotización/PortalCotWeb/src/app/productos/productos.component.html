@@ -1,0 +1,38 @@
+<!--<table mat-table [dataSource]="productos" class="mat-elevation-z8">
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> nombre </th>
+        <td mat-cell *matCellDef="let producto"> {{producto.nombre}} </td>
+    </ng-container>
+    <ng-container matColumnDef="comentario">
+        <th mat-header-cell *matHeaderCellDef> Comentario </th>
+        <td mat-cell *matCellDef="let producto"> {{producto.comentario}} </td>
+    </ng-container>
+    <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let producto"> {{producto.tipo}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>-->
+<div *ngIf="service.visible">
+<div class="text-right botones" >
+    <button class="btn btn-primary" (click)="refresh()"><i class="fa fa-refresh" ></i></button>
+    <button class="btn btn-primary" (click)="save()"><i class="fa fa-floppy-o"></i></button>
+    <button class="btn btn-primary" (click)="addNew()" ><i class="fa fa-plus" ></i></button>
+    <button class="btn btn-primary" (click)="remove()"><i class="fa fa-trash"></i></button>    
+</div>
+<div>
+<ag-grid-angular
+    style="width: 90%; height: 500px;"
+    class="ag-theme-balham custom-grid"
+    [enableSorting]="true"
+    [enableFilter]="true" 
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [gridOptions]="gridOptions"
+    (gridReady)="onGridReady($event)"
+    (cellValueChanged)="onCellValueChanged($event)">
+</ag-grid-angular>
+</div>
+</div>
+<!--[frameworkComponents]="frameworkComponents"-->
