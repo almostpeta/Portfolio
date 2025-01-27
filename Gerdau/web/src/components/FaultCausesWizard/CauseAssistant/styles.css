@@ -1,0 +1,15 @@
+.selected-cause {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  background-color: #f1f1f1;
+  border-color: #c6c9cb;
+  /* padding: 10px; */
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -1px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-family: sans-serif !important;
+  font-weight: normal !important;
+}

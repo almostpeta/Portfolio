@@ -1,0 +1,12 @@
+@media all and (max-width: 30em) {
+  button {
+    display: block;
+    margin: 0.4em auto;
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+.new {
+  margin-left: 10px;
+}

@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/machine/detail/:id", "destination": "/machine/detail/:id*" }
+  ]
+}

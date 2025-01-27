@@ -1,0 +1,8 @@
+canvas.sound-wave {
+  width: 100% !important;
+}
+
+audio {
+  margin: 0 0 15px 0;
+  /* width: 60%; */
+}

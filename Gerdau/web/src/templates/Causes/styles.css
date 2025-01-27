@@ -1,0 +1,16 @@
+.myinput.large {
+  height: 22px;
+  width: 30px;
+  border-color: #b3b3b3;
+}
+
+.myinput.large[type="checkbox"]:before {
+  width: 30px;
+  height: 20px;
+}
+
+.myinput.large[type="checkbox"]:after {
+  top: -20px;
+  width: 30px;
+  height: 16px;
+}

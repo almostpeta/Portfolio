@@ -1,0 +1,21 @@
+.piece-item-container {
+  height: 60px;
+  border: groove;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #e6e9eb;
+  border-color: #c6c9cb;
+}
+
+.unbordered-btn {
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+
+.unbordered-btn:hover {
+  color: #01516a;
+  border: none;
+  background-color: transparent;
+}

@@ -1,0 +1,32 @@
+.tab-pane {
+  /* box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08); */
+  border: 0;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  height: auto;
+  padding: 15px;
+  font-weight: 600;
+  align-items: center;
+  background-color: #01516a;
+  color: white;
+}
+
+.nav-tabs .nav-link {
+  height: auto;
+  padding: 15px;
+  font-weight: 500;
+  align-items: center;
+  color: #01516a;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-link,
+.nav-tabs .nav-link:hover {
+  font-weight: 600;
+}
+.nav-tabs {
+  margin-top: 20px;
+  box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+}

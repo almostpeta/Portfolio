@@ -1,0 +1,41 @@
+.dashboardCard {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  margin: 10px;
+  font-family: sans-serif !important;
+}
+
+.MuiDataGrid-columnsContainer {
+  min-height: 56px;
+  max-height: 56px;
+  background: rgb(1, 81, 106);
+  color: white;
+  line-height: 56px;
+  font-weight: bold !important;
+}
+
+.MuiDataGrid-colCellTitle {
+  font-weight: bold !important;
+}
+
+.MuiButtonBase-root
+  MuiIconButton-root
+  MuiDataGrid-menuIconButton
+  MuiIconButton-sizeSmall {
+  color: white;
+}
+
+.MuiDataGrid-root *,
+.MuiDataGrid-root *::before,
+.MuiDataGrid-root *::after {
+  box-sizing: inherit;
+  fill: white;
+}
+
+.MuiDataGrid-root {
+  border: none !important;
+}

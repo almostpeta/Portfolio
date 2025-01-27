@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+const https = require('https');
+const fs = require('fs');
+const path = require("path");
+const app = require("../app");
+
+const key = fs.readFileSync(path.join(__dirname, '../keys', 'key.pem'));
+const cert = fs.readFileSync(path.join(__dirname, '../keys', 'cert.pem'));
+const options = {
+  key,
+  cert
+};
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
+const port = process.env.port;
+
+const server = https.createServer(options, app);
+
+server.listen(port, () => {
+  console.log("server starting on port : " + port)
+});

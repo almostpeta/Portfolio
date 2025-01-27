@@ -1,0 +1,26 @@
+.modal-body {
+  background-color: #212121;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.modal-header {
+  background-color: rgb(1, 81, 106);
+  border: none !important;
+  color: white;
+}
+
+.modal-title {
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-header > button,
+.modal-header > button:hover {
+  color: white;
+}
+
+.canvas.sound-wave {
+  width: 100%;
+}

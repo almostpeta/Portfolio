@@ -1,0 +1,32 @@
+.CardContainer {
+  padding: 20px 20px;
+  border-radius: 10px;
+  width: 60%;
+  min-width: 60%;
+  /* min-height: 90%;
+  height: 90%; */
+  /* background-color: #ffffff; */
+  /* border: 1px solid gray;
+  cursor: pointer;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CardContent {
+  margin: 20px;
+  border: 0 !important;
+}
+
+.Header {
+  margin: 20px;
+}
+
+.Footer {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+}

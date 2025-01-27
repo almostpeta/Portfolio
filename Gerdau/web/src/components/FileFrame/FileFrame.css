@@ -1,0 +1,61 @@
+.Container {
+  border-radius: 2px;
+  width: 180px;
+  max-width: 180px;
+  height: 190px;
+  max-height: 190px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.FrameHeader {
+  position: relative;
+  padding: 0;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.Content {
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  overflow: hidden;
+  justify-content: center;
+  min-height: 150px;
+  max-height: 150px;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  border-color: #e0e0e0 !important;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+.FrameFooter {
+  position: relative;
+  background-color: #e8e8e8;
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  padding: 5px;
+  margin: 0;
+  justify-content: space-between;
+  width: 180px;
+  max-width: 180px;
+  align-items: center;
+}
+
+.FileName {
+  position: relative;
+  width: 160px;
+  font-size: 15px;
+  background-color: #e8e8e8;
+  max-width: 160px;
+  margin: 0 5px 0 5px;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  justify-content: center;
+  align-items: center;
+}

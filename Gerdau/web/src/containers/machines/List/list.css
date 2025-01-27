@@ -1,0 +1,115 @@
+.ListContainer {
+  position: relative;
+  margin-top: 30px;
+  overflow-y: scroll;
+  height: 70vh;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+  text-align: left;
+}
+
+.ListContainer::-webkit-scrollbar {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: none;
+}
+
+.item {
+  margin: 1rem;
+}
+
+.location {
+  border-radius: 5px;
+  text-align: left;
+  width: 80%;
+}
+
+.description {
+  text-align: left;
+}
+
+.state {
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  height: 30px;
+  border-radius: 5px;
+  width: 50%;
+  align-items: center;
+}
+
+.item:hover {
+  -webkit-animation: anim ease-out 0.5s 1;
+  animation: anim 0.5s 1;
+  transform: translateZ(30px);
+  cursor: pointer;
+}
+.item:active {
+  -webkit-transform: translateZ(26px);
+  transform: translateZ(26px);
+}
+@-webkit-keyframes anim {
+  0% {
+    transform: rotateX(0deg) translateZ(0px);
+  }
+  25% {
+    transform: rotateX(-4deg) translateZ(15px);
+  }
+  37% {
+    transform: rotateX(-8deg) translateZ(30px);
+    transform-origin: 50% 0%;
+  }
+  72% {
+    transform-origin: 50% 0%;
+    transform: rotateX(-4deg) translateZ(30px);
+  }
+  100% {
+    transform-origin: 50% 0%;
+    transform: rotateX(0deg) translateZ(30px);
+  }
+}
+@keyframes anim {
+  0% {
+    transform: rotateX(0deg) translateZ(0px);
+  }
+  25% {
+    transform: rotateX(-4deg) translateZ(15px);
+  }
+  37% {
+    transform: rotateX(-8deg) translateZ(30px);
+    transform-origin: 50% 0%;
+  }
+  72% {
+    transform-origin: 50% 0%;
+    transform: rotateX(-4deg) translateZ(30px);
+  }
+  100% {
+    transform-origin: 50% 0%;
+    transform: rotateX(0deg) translateZ(30px);
+  }
+}
+@-webkit-keyframes animOpp {
+  0% {
+    transform: translateZ(30px);
+  }
+  35% {
+    transform: translateZ(20px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+@keyframes animOpp {
+  0% {
+    transform: translateZ(30px);
+  }
+  35% {
+    transform: translateZ(20px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}

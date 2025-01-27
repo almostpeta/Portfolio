@@ -1,0 +1,51 @@
+{
+  "containers": {
+    "faults": {
+      "newFault": {
+        "deleteVoiceRecord": "Are you sure you want to delete this record?"
+      },
+      "detail": {
+        "related_files": {
+          "title": "Archivos"
+        }
+      }
+    },
+    "home": {
+      "addNewMachine": "Add new machine",
+      "listAllMachines": "List all machines",
+      "reportFault": "Report Fault",
+      "addEvent": "Add Event",
+      "listAllCauses": "Listar all causes"
+    },
+    "machines": {
+      "list": {
+        "noDataReturned": "No data returned"
+      },
+      "newMachine": {
+        "createdSuccessfully": "Successfully created",
+        "deleteVoiceRecord": "Are you sure you want to delete this record?",
+        "deleteComponentConfirmation": "Are you sure you want to delete this component?",
+        "errorOnCreation": "Could not create machine",
+        "name": "Name",
+        "title": "New Machine",
+        "workingSinceDate": "Working Since Date"
+      },
+      "delete": {
+        "title": "Delete machine",
+        "subtitle": "Are you sure you want to delete the machine?"
+      }
+    }
+  },
+  "components": {
+    "voiceModal": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "finishRecord": "Finish",
+      "startRecord": "Start",
+      "title": "Record Audio"
+    },
+    "detail": {
+      "title": "Component"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.responsive-width {
+  width: auto;
+}
+
+@media (max-width: 1160px) {
+  .responsive-width {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1161px) and (max-width: 1278px) {
+  .responsive-width {
+    width: 55%;
+  }
+}

@@ -1,0 +1,15 @@
+.area-container {
+  position: relative;
+  height: 150px;
+  max-width: 100%;
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+.icon-user {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+}

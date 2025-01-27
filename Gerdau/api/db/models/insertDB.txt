@@ -1,0 +1,278 @@
+-- USE master;
+-- GO
+-- ALTER DATABASE gerdau 
+-- SET SINGLE_USER 
+-- WITH ROLLBACK IMMEDIATE;
+-- GO
+-- create database gerdau
+
+-- insert plants
+
+INSERT INTO plants (name,location,country, createdAt,updatedAt) 
+VALUES  ('Planta Brasil', 'Rio', 'Brasil',GETDATE(),GETDATE()),
+        ('Planta Uruguay', 'Montevideo', 'Uruguay',GETDATE(),GETDATE());
+
+-- insert areas
+
+INSERT INTO areas (name,plantId, createdAt,updatedAt) 
+VALUES  ('Transformaciones en frio', 1,GETDATE(),GETDATE()),
+        ('Transformaciones en frio', 2,GETDATE(),GETDATE()),
+        ('Aceria', 2,GETDATE(),GETDATE()),
+        ('Herreria', 2,GETDATE(),GETDATE());
+
+-- insert sublevels
+
+INSERT INTO sublevels (name, areaId, createdAt,updatedAt) 
+VALUES  ('Nivel 0', 1,GETDATE(),GETDATE()),
+        ('Nivel 0', 2,GETDATE(),GETDATE()),
+        ('Nivel 1', 2,GETDATE(),GETDATE()),
+        ('Nivel 0', 3,GETDATE(),GETDATE()),
+        ('Nivel 0', 4,GETDATE(),GETDATE()),
+        ('Nivel 1', 4,GETDATE(),GETDATE());
+
+-- insert stages
+
+INSERT INTO stages (name, createdAt, updatedAt) 
+VALUES  ('Devanado',GETDATE(),GETDATE()),
+        ('Soldado',GETDATE(),GETDATE()),
+        ('Alimentación',GETDATE(),GETDATE()),
+        ('Laminado',GETDATE(),GETDATE()),
+        ('Bobinado',GETDATE(),GETDATE()),
+        ('Extracción',GETDATE(),GETDATE());
+
+-- insert users
+
+INSERT INTO users (firstName, lastName, email, password, role, isActive, createdAt,updatedAt) 
+VALUES  ('Admin 1', 'ADMIN', 'santiago.maresca26+admin@gmail.com', '$2a$08$yboN0RDdQWZGl33XSA1bouYEfrdfjD6CBhbz/n4HdwAoURjVj0aOy', 'Admin', 1, GETDATE(),GETDATE()),
+        ('Admin 2', 'ADMIN', 'fm.poncedeleon+admin@gmail.com', '$2a$08$yboN0RDdQWZGl33XSA1bouYEfrdfjD6CBhbz/n4HdwAoURjVj0aOy', 'Admin', 1, GETDATE(),GETDATE()),
+        ('Martin', 'Teliz', 'martin@gmail.com', '$2a$08$yboN0RDdQWZGl33XSA1bouYEfrdfjD6CBhbz/n4HdwAoURjVj0aOy', 'Admin', 1, GETDATE(),GETDATE()),
+        ('Santiago', 'Maresca', 'santiago.maresca26@gmail.com', '$2a$08$yboN0RDdQWZGl33XSA1bouYEfrdfjD6CBhbz/n4HdwAoURjVj0aOy', 'Mecanico', 1, GETDATE(),GETDATE()),
+        ('Pablo', 'Beloso', 'pbelosoo96@gmail.com', '$2a$08$yboN0RDdQWZGl33XSA1bouYEfrdfjD6CBhbz/n4HdwAoURjVj0aOy', 'Mecanico', 1, GETDATE(),GETDATE()),
+        ('Pedro', 'Heguy', 'pedro@gmail.com', '$2a$08$yboN0RDdQWZGl33XSA1bouYEfrdfjD6CBhbz/n4HdwAoURjVj0aOy', 'Mecanico', 1, GETDATE(),GETDATE()),
+        ('Federico', 'Ponce de Leon', 'fm.poncedeleon@gmail.com', '$2a$08$yboN0RDdQWZGl33XSA1bouYEfrdfjD6CBhbz/n4HdwAoURjVj0aOy', 'Mecanico', 1, GETDATE(),GETDATE());
+
+-- insert machines
+
+INSERT INTO machines (internal_name, serie_number, type, manufacturer, make, model, working_from_date, purchase_number, responsibleId, description, relevant_data, manufacturer_type, flat_number, state, plantId, areaId, sublevelId, electric_faults_count, neumatic_faults_count, hydraulic_faults_count, mechanic_faults_count, total_stopped_machine_time, isActive, createdAt,updatedAt) 
+VALUES  ('Laminadora en Frio', 'SFEB-1865', 'Mecánica', 'Cymaco', 'Komatsu', 'K101c' , '2019-06-06 11:30:20.3233333 +00:00', '111cgd5555', 2, 'proceso de deformación a alta velocidad.', 'El cambio de volumen se produce en la dirección de laminado', '1', '35c5wt', '1', 2, 2, 2, 0, 0, 2, 4, 0, 1, GETDATE(),GETDATE()),
+        ('Enfriaderos', 'SAFR-1158', 'Eléctrica', 'Fabricante', 'Komatsu', 'Kc11zp10' , '2020-02-01 11:30:20.3233333 +00:00', '133cxd444', 2, 'Enfria la charrata a la temperatura ideal.', '', '1', '35c5wt', '3', 2, 2, 2, 3, 0, 1, 0, 0, 1, GETDATE(),GETDATE()),
+        ('Horno de Afino', 'H0FR-12', 'Mecánica', 'Fabricante', 'Komatsu', 'Hc11zp10' , '2021-02-01 11:30:20.3233333 +00:00', '1023cxd444', 2, 'Proceso de descarburizacion y eliminacion de impurezas', '', '1', '25h0wb', '2', 2, 2, 2, 0, 3, 1, 1, 0, 1, GETDATE(),GETDATE());
+        
+-- insert components
+
+INSERT INTO components (internal_name, serie_number, type, working_from_date, description, relevant_data, manufacturer_type, state,  machineId, manufacturer, make, model, responsibleId, provider, electric_faults_count, neumatic_faults_count, hydraulic_faults_count, mechanic_faults_count, isActive, createdAt,updatedAt) 
+VALUES  ('Motor A', 'ASBD-565', 'Mecánico', '2019-06-06 18:30:20.3233333 +00:00', 'Motor de tipo A de transformaciones en frío', 'Despues se funde', '1', '3', 1, 'Fabricante SA', 'Komatsu', 'kz1', 3, 'Proveedor industrial', 0, 0, 2, 3, 1, GETDATE(),GETDATE()),
+        ('Motor B', 'AFFSNDD-52625', 'Hidráulico', '2019-06-07 11:30:20.3233333 +00:00', 'Motor de tipo B de transformaciones en frío', '', '1', '1', 1, 'Fabricante', 'Komatsu', 'kz22', 4, 'Proveedor industrial', 0, 0, 0, 1, 1, GETDATE(),GETDATE()),
+        ('Transformador', 'AFFGH-4675', 'Eléctrico', '2019-06-09 11:30:20.3233333 +00:00', 'Controla temperatura', 'trabaja con un sistema de primera nivel', '1', '1', 1, 'Fabricante', 'Komatsu', 'kz22', 5, 'Proveedor industrial', 0, 0, 0, 2, 1, GETDATE(),GETDATE()),
+        
+        ('Transformador', 'AFFGH-4675', 'Eléctrico', '2020-02-02 11:30:20.3233333 +00:00', 'Controla temperatura', 'trabaja con un sistema de primera nivel', '1', '1', 2, 'Fabricante', 'Komatsu', 'kz22', 5, 'Proveedor industrial', 2, 0, 0, 0, 1, GETDATE(),GETDATE()),
+        ('Depósito', 'AHUYFH-4215', 'Hidráulico', '2020-02-02 11:30:20.3233333 +00:00', 'Guarda el material una vez terminado el proceso', '', '1', '1', 2, 'Fabricante', 'Komatsu', 'kz22', 6, 'Proveedor industrial', 0, 0, 1, 0, 1, GETDATE(),GETDATE()),
+        ('Freezer', 'AHMLR-2893', 'Eléctrico', '2020-02-02 11:30:20.3233333 +00:00', 'Congela el material', '', '1', '2', 2, 'Fabricante', 'Komatsu', 'kz22', 5, 'Proveedor', 1, 0, 0, 0, 1, GETDATE(),GETDATE()),
+        
+        ('Depósito', 'AHUYFH-4215', 'Hidráulico', '2021-02-02 11:30:20.3233333 +00:00', 'Guarda el material una vez terminado el proceso', '', '1', '1', 2, 'Fabricante', 'Komatsu', 'kz22', 6, 'Proveedor industrial', 0, 1, 0, 1, 1, GETDATE(),GETDATE()),
+        ('Banda transformadora', 'AHUYFH-4215', 'Hidráulico', '2021-02-02 11:30:20.3233333 +00:00', 'Mueve el material hacia el horno ', '', '1', '1', 2, 'Fabricante', 'Komatsu', 'kz22', 6, 'Proveedor industrial', 0, 1, 1, 1, 1, GETDATE(),GETDATE()),
+        ('Horno', 'AFFSNDD-52625', 'Mecánica', '2021-02-02 11:30:20.3233333 +00:00', 'Funde el material', '', '1', '1', 3, 'Fabricante', 'Komatsu', 'kz22', 4, 'Proveedor industrial', 0, 1, 1, 0, 1, GETDATE(),GETDATE());
+
+
+        
+-- insert pieces
+
+INSERT INTO pieces (internal_name, identifier, type, working_from_date, specifications, manufacturer_type, componentId, manufacturer, make, model, responsibleId, provider, electric_faults_count, neumatic_faults_count, hydraulic_faults_count, mechanic_faults_count, isActive, createdAt,updatedAt) 
+VALUES ('Rodillos', 'AFFSNDD-52625', 'Mecánica', '2019-06-06 18:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 1, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Brazo', 'AF23SNDD-51324', 'Mecánica', '2019-06-07 18:30:20.3233333 +00:00', 'Brazos que sostienen los rodillos', 'segunda mano', 1, 'Manufacturer', 'Komatsu', 'kz10', 3, 'Proveedor Anonimo', 0, 0, 2, 2, 1, GETDATE(),GETDATE()),
+       ('Soporte de Brazo', 'ZXYND-18974', 'Mecánica', '2019-06-07 18:30:20.3233333 +00:00', 'Brazos que sostienen los rodillos', 'segunda mano', 1, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 1, 1, GETDATE(),GETDATE()),
+
+       ('Motor', 'ASER8GT4-8895', 'Mecánica', '2019-06-07 18:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 2, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Contenedor A', 'AFDADS-EFRRT14', 'Hidráulica', '2019-06-08 11:30:20.3233333 +00:00', 'Guarda deposito', 'segunda mano', 2, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+        
+       ('Motor', 'ASER8GT4-8895', 'Mecánica', '2019-06-10 18:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 3, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Bobina', 'BSET8GY4-8095', 'Eléctrica', '2019-06-10 18:30:20.3233333 +00:00', 'Almacena la energia', 'segunda mano', 3, 'Manufacturer', 'Komatsu', 'kz10', 3, 'Proveedor Anonimo', 0, 0, 0, 2, 1, GETDATE(),GETDATE()),
+       ('Panel Electrico', 'ASUTRL-ESFMRY4', 'Eléctrica', '2019-06-11 18:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 3, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Panel Electrico', 'ASUTRL-ESFMRY4', 'Eléctrica', '2019-06-11 18:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 3, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+        
+       ('Motor', 'ASER8GT4-8895', 'Mecánica', '2020-02-02 11:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 4, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Bobina', 'BSET8GY4-8095', 'Eléctrica', '2020-02-02 11:30:20.3233333 +00:00', 'Almacena la energia', 'segunda mano', 4, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 1, 0, 0, 2, 1, GETDATE(),GETDATE()),
+       ('Panel Electrico', 'ASUTRL-ESFMRY4', 'Eléctrica', '2020-02-03 11:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 4, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Panel Electrico', 'ASUTRL-ESFMRY4', 'Eléctrica', '2020-02-03 11:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 4, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 1, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       
+       ('Contenedor A', 'AFDARY-58814', 'Hidráulica', '2020-02-02 11:30:20.3233333 +00:00', 'Guarda deposito', 'segunda mano', 5, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Contenedor B', 'AFDARY-58814', 'Hidráulica', '2020-02-02 11:30:20.3233333 +00:00', 'Guarda deposito', 'segunda mano', 5, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+
+       ('Congelador A', 'AFASD-EEE48GT4', 'Neumática', '2020-02-02 11:30:20.3233333 +00:00', 'Congela material', 'Original', 6, 'Ruben SA', 'Komatsu', 'kz2200', 3, 'Proveedor 1', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Congelador B', 'AFASD-EEE48GT4', 'Neumática', '2020-02-02 11:30:20.3233333 +00:00', 'Congela material', 'Original', 6, 'Ruben SA', 'Komatsu', 'kz2200', 3, 'Proveedor 1', 1, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Motor', 'ASER8GT4-8895', 'Mecánica', '2020-02-02 11:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 6, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Panel Electrico', 'ASUTRL-ESFMRY4', 'Eléctrica', '2020-02-02 11:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 6, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+
+       ('Contenedor A', 'AFDARY-58814', 'Hidráulica', '2021-02-02 11:30:20.3233333 +00:00', 'Guarda deposito', 'segunda mano', 7, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Contenedor B', 'AFDARY-58814', 'Hidráulica', '2021-02-02 11:30:20.3233333 +00:00', 'Guarda deposito', 'segunda mano', 7, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       
+       ('Brazo', 'AF23SNDD-51324', 'Mecánica', '2021-02-02 11:30:20.3233333 +00:00', 'Brazos que sostienen los rodillos', 'segunda mano', 8, 'Manufacturer', 'Komatsu', 'kz10', 3, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Soporte de Brazo', 'ZXYND-18974', 'Mecánica', '2021-02-02 11:30:20.3233333 +00:00', 'Brazos que sostienen los rodillos', 'segunda mano', 8, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 1, 1, 0, 1, GETDATE(),GETDATE()),
+       ('Cinta', 'CXWND-897', 'Mecánica', '2021-02-02 11:30:20.3233333 +00:00', 'Cinta que transporta por el brazo el material', 'segunda mano', 8, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 1, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Motor', 'ASER8GT4-8895', 'Mecánica', '2021-02-02 11:30:20.3233333 +00:00', 'Trabaja a las revoluciones necesarias para que realice bien el trabajo sin dañar la maquina', 'segunda mano', 3, 'Manufacturer', 'Komatsu', 'kz10', 5, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+
+       ('Contenedor', 'AFDARY-58814', 'Hidráulica', '2021-02-02 11:30:20.3233333 +00:00', 'Guarda deposito', 'segunda mano', 9, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Valvula', 'VAFDARY-5884', 'Mecánica', '2021-02-02 11:30:20.3233333 +00:00', 'Regula temperatura', 'segunda mano', 9, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Termostato', 'TASD3-5884', 'Hidráulica', '2021-02-02 11:30:20.3233333 +00:00', 'Muestra temperatura', 'segunda mano', 9, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE()),
+       ('Hornillo', 'HVWE-5884', 'Neumática', '2021-02-03 11:30:20.3233333 +00:00', 'Funde material', 'segunda mano', 9, 'Manufacturer', 'Komatsu', 'kz10', 2, 'Proveedor Anonimo', 0, 0, 0, 0, 1, GETDATE(),GETDATE());
+        
+
+-- insert faults
+INSERT INTO faults (type, name, state, clasification, description, description_record, start_date_time, end_date_time, consequences, consequences_record, stageId, relevant_data, relevant_data_record, priority, are_measures, analyzed_measures, componentId, pieceId, responsibleId, createdAt,updatedAt, isActive, fault_number)
+VALUES  ('Mecánica,Hidraúlica', 'Brazo Roto' ,'Pendiente', 'Mecánica,Hidraúlica', 'Brazo muy duro', '', '2021-07-24 11:30:20.3233333 +00:00', null, 'no se mueven', '', 1, '', '', 'Baja', 0, '', 1, 2, 6, GETDATE(),GETDATE(),1, ''),
+        ('Mecánica', 'El brazo no se desplaza correctamente' ,'Resuelta', 'Mecánica', 'Brazo no se mueve', '', '2021-07-29 11:30:20.3233333 +00:00', '2021-08-01 04:30:20.3233333 +00:00', 'no se mueven', '', 1, '', '', 'Baja', 0, '', 1, 3, 5, GETDATE(),GETDATE(),1, ''),
+        ('Mecánica', 'El motor está descompuesto' ,'Resuelta', 'Mecánica', 'No anda', '', '2021-06-30 11:30:20.3233333 +00:00', '2021-07-12 12:02:20.3233333 +00:00', 'no se mueven', '', 1, '', '', 'Baja', 0, '', 2, null, 5, GETDATE(),GETDATE(),1, ''),
+        ('Hidráulica', 'Depósito con problemas' ,'Pendiente', 'Hidraúlica', 'tiene problemas', '', '2021-07-02 11:30:20.3233333 +00:00', '2021-07-04 11:30:20.3233333 +00:00', 'no se mueven', '', 1, '', '', 'Baja', 0, '', 5, null, 4, GETDATE(),GETDATE(),1, ''),
+        ('Mecánica,Neumática', 'Brazo Roto' ,'Pendiente', 'Mecánica,Neumática', 'Brazo muy duro', '', '2021-02-24 11:30:20.3233333 +00:00', null, 'no se mueven', '', 1, '', '', 'Baja', 0, '', 8, null, 6, GETDATE(),GETDATE(),1, ''),
+        ('Eléctrica', 'Cortocircuito en el transformador' ,'Pendiente', 'Eléctrica', 'no anda el transformador', '', '2021-06-24 11:30:20.3233333 +00:00', null, 'no se mueven', '', 1, '', '', 'Baja', 0, '', 4, 13, 5, GETDATE(),GETDATE(),1, ''),
+        ('Neumática','Cinta atascada' ,'Resuelta', 'Neumática', 'no congela', '', '2020-07-07 11:30:20.3233333 +00:00', '2020-07-09 12:30:20.3233333 +00:00', 'el motor esta teniendo fallas', '', 1, '', '', 'Alta', 0, '', 8, 24, 3, GETDATE(),GETDATE(),1, '1a'),
+        ('Eléctrica','Rotura en el freezer' ,'Pendiente', 'Eléctrica', 'no congela', '', '2021-07-14 11:30:20.3233333 +00:00', '2021-07-20 12:30:20.3233333 +00:00', 'el motor esta teniendo fallas', '', 1, '', '', 'Alta', 0, '', 6, 17, 3, GETDATE(),GETDATE(),1, ''),
+        ('Eléctrica', 'Mal almacenamiento de energia' ,'Pendiente', 'Eléctrica', 'no anda la bobina', '', '2021-06-24 11:30:20.3233333 +00:00', null, 'bobina en mal estado', '', 1, '', '', 'Baja', 0, '', 4, 11, 5, GETDATE(),GETDATE(),1, ''),     
+        ('Mecánica,Hidráulica', 'Brazo Roto' ,'Pendiente', 'Mecánica,Hidráulica', 'Brazo muy duro', '', '2021-07-30 11:30:20.3233333 +00:00', null, 'no se mueve', '', 1, '', '', 'Baja', 0, '', 1, 2, 6, GETDATE(),GETDATE(),1, ''),        
+        ('Neumática,Hidráulica', 'No muetras temperatura' ,'Resuelta', 'Neumática,Hidráulica', 'no muestra la temperatur correctamente', '', '2021-07-03 11:30:20.3233333 +00:00', '2021-06-30 11:30:20.3233333 +00:00', 'no muestra temperatura', '', 1, '', '', 'Baja', 0, '', null, 23, 6, GETDATE(),GETDATE(),1, ''),
+        ('Neumática', 'Depósito con problemas' ,'Pendiente', 'Neumática', 'tiene problemas', '', '2021-06-12 11:30:20.3233333 +00:00', '2021-06-14 11:30:20.3233333 +00:00', 'no se mueven', '', 1, '', '', 'Baja', 0, '', 7, null, 4, GETDATE(),GETDATE(),1, '');
+
+INSERT INTO userFault (createdAt,updatedAt,userId, faultId)
+VALUES  (GETDATE(), GETDATE(),2,1),
+        (GETDATE(), GETDATE(),4,1),
+        (GETDATE(), GETDATE(),5,2),
+        (GETDATE(), GETDATE(),6,2),
+        (GETDATE(), GETDATE(),4,2),
+        (GETDATE(), GETDATE(),3,3),
+        (GETDATE(), GETDATE(),4,3),
+        (GETDATE(), GETDATE(),3,4),
+        (GETDATE(), GETDATE(),2,4),
+        (GETDATE(), GETDATE(),6,4),
+        (GETDATE(), GETDATE(),6,5),
+        (GETDATE(), GETDATE(),6,6),
+        (GETDATE(), GETDATE(),3,6),
+        (GETDATE(), GETDATE(),2,7),
+        (GETDATE(), GETDATE(),5,7),
+        (GETDATE(), GETDATE(),6,8),
+        (GETDATE(), GETDATE(),3,9),
+        (GETDATE(), GETDATE(),4,9),
+        (GETDATE(), GETDATE(),6,9),
+        (GETDATE(), GETDATE(),3,10),
+        (GETDATE(), GETDATE(),4,11),
+        (GETDATE(), GETDATE(),5,11),
+        (GETDATE(), GETDATE(),2,12),
+        (GETDATE(), GETDATE(),3,12),
+        (GETDATE(), GETDATE(),4,12),
+        (GETDATE(), GETDATE(),6,12);
+
+
+
+
+-- insert studies
+
+INSERT INTO studies (internal_name, reason, date, createdAt, updatedAt, componentId, pieceId, userId, isActive)
+VALUES      ('Estudio 1', 'la pieza de la maquina hizo un estudio por reiteradas fallas........', '2021-04-02 11:30:20.3233333 +00:00',GETDATE(),GETDATE(),1,2,2,1),
+            ('Estudio 2', 'el componente de la maquina hizo un estudio por reiteradas fallas........', '2021-04-12 11:30:20.3233333 +00:00',GETDATE(),GETDATE(),1,null,2,1),
+            ('Estudio 3', 'el componente de la maquina hizo un estudio por reiteradas fallas........', '2021-05-13 11:30:20.3233333 +00:00',GETDATE(),GETDATE(),2,null,2,1),
+            ('Estudio 4', 'el componente de la maquina hizo un estudio por reiteradas fallas........', '2021-05-13 11:30:20.3233333 +00:00',GETDATE(),GETDATE(),8,null,2,1),
+            ('Estudio 5', 'la pieza de la maquina hizo un estudio por reiteradas fallas........', '2021-05-13 11:30:20.3233333 +00:00',GETDATE(),GETDATE(),4,13,2,1);
+
+-- insert causes
+
+INSERT INTO causes (name, description, status, reason, relevant_data, isActive, createdAt, updatedAt, requestedId, reject_reason, number_of_uses)
+VALUES      ('falta aceite en engranaje', 'falta de aceite', 'Solicitada', 'se demoro en hacer el mantenimiento', 'data relevante', 1, GETDATE(), GETDATE(), 2, '', 4),
+            ('tuercas flojas', 'tuercas flojas', 'Aprobada', 'tuerca sin afirmar', 'data relevante', 1, GETDATE(), GETDATE(), 2, '', 3),
+            ('Objeto trancando el brazo', 'Objeto trancando el brazo', 'Aprobada', 'Objeto trancando el brazo', 'data relevante', 1, GETDATE(), GETDATE(), 2, '', 2),
+            ('filtro tapado de motor', 'no congela', 'Solicitada', 'ventilaciones tapadas', 'data relevante', 1, GETDATE(), GETDATE(), 2, '', 2),
+            ('sobrecalienta el motor', 'el motor se sobrecalienta', 'Solicitada', '', 'data relevante', 1, GETDATE(), GETDATE(), 4,'', 1),
+            ('Daño en material', 'da;o en material', 'Solicitada', '', 'data relevante', 1, GETDATE(), GETDATE(), 2, '', 1),
+            ('cables en mal estado', 'cable suelto', 'Aprobada', 'cable mal puesto', 'data relevante', 1, GETDATE(), GETDATE(), 2, '', 2),
+            ('motor con problemas', 'el motor tiene problemas', 'Aprobada', 'motor con problemas', 'data relevante', 1, GETDATE(), GETDATE(), 4,'', 1),
+            ('Bobina falla', 'bobina con problemas', 'Aprobada', 'bobina con problemas', 'data relevante', 1, GETDATE(), GETDATE(), 4,'', 1),
+            ('Saltan chispas', 'saltan chispas', 'Aprobada', 'saltan chispas', 'data relevante', 1, GETDATE(), GETDATE(), 4,'', 1),
+            ('termostato roto', 'no muestra temperatura', 'Aprobada', 'no muestra temperatura', 'data relevante', 1, GETDATE(), GETDATE(), 4,'', 1);
+
+
+
+            
+-- insert causeFault
+
+INSERT INTO causeFaults (createdAt, updatedAt, causeId, faultId)
+VALUES      (GETDATE(), GETDATE(), 1,1),
+            (GETDATE(), GETDATE(), 2,1),
+            (GETDATE(), GETDATE(), 1,2),
+            (GETDATE(), GETDATE(), 2,2),
+            (GETDATE(), GETDATE(), 3,2),
+            (GETDATE(), GETDATE(), 4,3),
+            (GETDATE(), GETDATE(), 5,3),
+            (GETDATE(), GETDATE(), 6,4),
+            (GETDATE(), GETDATE(), 1,5),
+            (GETDATE(), GETDATE(), 2,5),
+            (GETDATE(), GETDATE(), 7,6),
+            (GETDATE(), GETDATE(), 3,7),
+            (GETDATE(), GETDATE(), 8,8),
+            (GETDATE(), GETDATE(), 4,8),
+            (GETDATE(), GETDATE(), 9,9),
+            (GETDATE(), GETDATE(), 10,9),
+            (GETDATE(), GETDATE(), 1,10),
+            (GETDATE(), GETDATE(), 11,11),
+            (GETDATE(), GETDATE(), 7,11);
+
+-- insert machineStages
+
+INSERT INTO machineStage (machineId, stageId, createdAt, updatedAt) 
+VALUES  (1, 1, GETDATE(),GETDATE()),
+        (1, 3, GETDATE(),GETDATE()),
+        (2, 1, GETDATE(),GETDATE()),
+        (2, 5, GETDATE(),GETDATE()),
+        (3, 1, GETDATE(),GETDATE());
+
+
+-- solution
+
+INSERT INTO solutions (name, description, status, relevant_data, isActive, createdAt, updatedAt, reject_reason, causeId, requestedId) 
+VALUES      ('Agregar aceite a motor A', 'se utiliza el aceite tipo C', 'Aprobada', 'data relevante', 1, GETDATE(), GETDATE(), '', 1, 3),
+            ('Ajustar motor B', 'hay una pieza del motor que estaba floja', 'Solicitada', 'relevante', 6, GETDATE(), GETDATE(), '', 1, 2),
+            ('Ajustar tuercas', 'El brazo esta flojo que estaba floja', 'Solicitada', 'relevante', 2, GETDATE(), GETDATE(), '', 2, 4),
+            ('Quitar objeto', 'Quitar objeto que tranca', 'Aprobada', 'relevante', 2, GETDATE(), GETDATE(), '', 3, 4),
+            ('Limpieza filtro', 'limpieza de filtro', 'Aprobada', 'relevante', 4, GETDATE(), GETDATE(), '', 4, 2),
+            ('Realizar ajuste del motor', 'ajuste en el motor', 'Aprobada', 'relevante', 2, GETDATE(), GETDATE(), '', 5, 6),
+            ('Cambiar cables', 'cambiar cables rotos', 'Solicitada', 'relevante', 2, GETDATE(), GETDATE(), '', 7, 3),           
+            ('Ajustar motor', 'ajustar la pieza del motor', 'Solicitada', 'relevante', 2, GETDATE(), GETDATE(), '', 8, 3),
+            ('Cambiar el motor', 'cambiar motor', 'Aprobada', 'relevante', 2, GETDATE(), GETDATE(), '', 8, 5),
+            ('reemplazar bobina', 'remplazar bobina con fallas', 'Aprobada', 'relevante', 2, GETDATE(), GETDATE(), '', 10, 6),
+            ('Cambiar termostato', 'cambiar termostato', 'Solicitada', 'relevante', 2, GETDATE(), GETDATE(), '', 11, 2),
+            ('Ajustar conexion con termostato', 'ajustar termostato', 'Aprobada', 'relevante', 2, GETDATE(), GETDATE(), '', 11, 3);
+
+-- method
+
+INSERT INTO methods (name, description, isActive, createdAt, updatedAt, solutionId) 
+VALUES      ('Agregar aceite', 'ingresar el aceite de tipo C en el tanque', 1, GETDATE(), GETDATE(),1),
+            ('Agregar aceite', 'vaciar el aceite antiguo e ingresar el nuevo', 1, GETDATE(), GETDATE(),1),
+            ('Ajustar motor', 'Se ajusta la parte izquierda del motor', 1, GETDATE(), GETDATE(),2),
+            ('Ajustar tuerca', 'Se ajusta la tuerca de la parte izquierda del motor', 1, GETDATE(), GETDATE(),3),
+            ('Quitar objeto que obstruye', 'Se quita el objeto que impide el correcto funcionamiento', 1, GETDATE(), GETDATE(),4),
+            ('Limpiar filtro', 'Se quita el filtro y se limpia', 1, GETDATE(), GETDATE(),5),
+            ('Ajustar motor', 'Se ajusta la parte izquierda del motor', 1, GETDATE(), GETDATE(),6),
+            ('Cambiar cable pelado', 'cortar parte del cable donde esta pelado y agregar parte nueva', 1, GETDATE(), GETDATE(),7),
+            ('Ajustar motor', 'Se ajusta la parte izquierda del motor', 1, GETDATE(), GETDATE(),8),
+            ('Cambiar el motor', 'Se cambia el motor', 1, GETDATE(), GETDATE(),9),
+            ('Reemplazar bobina', 'Se cambia la bobina en mal estado', 1, GETDATE(), GETDATE(),10),
+            ('Cambiar termostato', 'Se cambia el termostato con problemas', 1, GETDATE(), GETDATE(),11),
+            ('Ajustes en la conexion', 'Se ajusta la conexion con el termostato', 1, GETDATE(), GETDATE(),12),
+            ('Cambiar pieza que conecta', 'Se cambia la pieza con problemas', 1, GETDATE(), GETDATE(),12);
+
+-- task
+
+INSERT INTO tasks (name, description, reason, deadline, status, isActive, createdAt, updatedAt, responsibleId, requestedId, pieceId, componentId, machineId, start_date ,complete_date) 
+VALUES      ('Mantenimiento motor', 'Mantenimiento mensual del motor', 'La máquina lo necesita', '2021-07-22 11:30:20.3233333 +00:00', 'Completado', 1, GETDATE(), GETDATE(),5,3,1,1,1, '2021-07-25 11:30:20.3233333 +00:00', '2021-07-26 11:30:20.3233333 +00:00'),
+            ('Limpieza a fondo', 'Limpieza a fondo del...', 'La pieza necesita una limpieza ya que...', '2021-08-01 11:30:20.3233333 +00:00', 'No Completado', 1, GETDATE(), GETDATE(),2,2,1,1,2, '2021-08-14 11:30:20.3233333 +00:00', null),
+            ('Mantenimiento del panel', 'Mantenimiento del panel eléctrico', 'La pieza necesita mantenimiento', '2021-07-31 11:30:20.3233333 +00:00', 'No Completado', 1, GETDATE(), GETDATE(),4,4,8,3,1, '2021-08-02 11:30:20.3233333 +00:00', null),
+            ('Mantenimiento motor B', 'Mantenimiento mensual del motor B', 'La máquina lo necesita', '2021-07-25 11:30:20.3233333 +00:00', 'Completado', 1, GETDATE(), GETDATE(),4,6,1,1,1, '2021-07-26 11:30:20.3233333 +00:00', '2021-07-28 11:30:20.3233333 +00:00'),
+            ('Mantenimiento de Bomba', 'Mantenimiento de Bomba', 'bomba necesita mantenimiento','2021-05-02 11:30:20.3233333 +00:00','No Completado', 1, GETDATE(), GETDATE(),3,2, null,1, 1,'2021-05-01 11:30:20.3233333 +00:00', null),
+            ('Limpieza en deposito', 'Limpieza mensual del deposito B', 'La máquina lo necesita', '2021-07-30 11:30:20.3233333 +00:00', 'Completado', 1, GETDATE(), GETDATE(),6,2,null,7,3, '2021-07-30 11:30:20.3233333 +00:00', '2021-07-31 11:30:20.3233333 +00:00'),
+            ('Limpieza en deposito', 'Limpieza mensual del deposito B', 'La máquina lo necesita', '2021-07-30 11:30:20.3233333 +00:00', 'Completado', 1, GETDATE(), GETDATE(),4,5,1,1,1, '2021-07-30 11:30:20.3233333 +00:00', '2021-07-31 11:30:20.3233333 +00:00'),
+            ('Mantenimiento motor de cinta', 'Mantenimiento mensual del motor de la cinta', 'La máquina lo necesita', '2021-07-05 11:30:20.3233333 +00:00', 'Completado', 1, GETDATE(), GETDATE(),3,2,24,8,3, '2021-07-06 11:30:20.3233333 +00:00', '2021-07-08 11:30:20.3233333 +00:00');
+
+-- fault methods
+
+INSERT INTO faultMethod (faultId, methodId, createdAt, updatedAt) 
+VALUES      (2,5,GETDATE(), GETDATE()),
+            (3,6,GETDATE(), GETDATE()),
+            (7,5,GETDATE(), GETDATE()),
+            (11,12,GETDATE(), GETDATE());

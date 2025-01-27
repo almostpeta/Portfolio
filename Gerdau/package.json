@@ -1,0 +1,17 @@
+{
+  "name": "Gerdau",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "npm install --prefix api && npm install --prefix web"
+  },
+  "repository": "https://github.com/fponcedeleon/Gerdau.git",
+  "author": "Federico Ponce de Leon <fm.poncedeleon@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express-fileupload": "^1.2.0",
+    "react-table": "^7.6.3"
+  }
+}

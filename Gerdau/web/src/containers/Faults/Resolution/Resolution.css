@@ -1,0 +1,20 @@
+.node__cause {
+  fill: #d7a800;
+}
+
+.node__method {
+  fill: #01516a;
+}
+
+.node__fault {
+  fill: #961706;
+}
+
+.node__solution {
+  fill: #01660b;
+}
+
+.rd3t-node,
+.rd3t-leaf-node {
+  stroke: none !important;
+}

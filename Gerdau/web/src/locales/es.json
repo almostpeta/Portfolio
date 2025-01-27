@@ -1,0 +1,616 @@
+{
+  "app_title": "HCM",
+  "nav_bar": {
+    "new_machine": "Nueva Máquina",
+    "home": "Inicio",
+    "list_machines": "Listar Máquinas",
+    "report_fault": "Reportar Falla"
+  },
+  "containers": {
+    "home": {
+      "addNewMachine": "Ingresar máquina",
+      "listAllMachines": "Listar todas las máquinas",
+      "listAllCauses": "Listar todas las causas",
+      "reportFault": "Reportar falla",
+      "addEvent": "Ingresar Evento",
+      "register": "Registrar Usuario",
+      "list_users": "Trabajar con Usuarios"
+    },
+    "machines": {
+      "list": {
+        "noDataReturned": "No existen máquinas ingresadas"
+      },
+      "machine": {
+        "createdSuccessfully": "Máquina creada correctamente",
+        "purchaseNumber": "Número de Compra",
+        "deleteVoiceRecord": "¿Seguro desea eliminar el audio?",
+        "deleteComponentConfirmation": "¿Seguro desea eliminar el componente?",
+        "errorOnCreation": "No se ha podido crear correctamente",
+        "floor": "Planta",
+        "name": "Nombre Interno",
+        "new_title": "Ingresar Máquina",
+        "edit_title": "Editar Máquina",
+        "serieNumber": "Número de Serie",
+        "make": "Marca",
+        "model": "Modelo",
+        "maintenanceResponsible": "Responsable de Mantenimiento",
+        "manufacturer": "Fabricante",
+        "FileList": "Archivos Adjuntos",
+        "state": "Estado",
+        "manufacturerType": "Tipo de Fabricación",
+        "planId": "Número de Plano",
+        "type": "Tipo de Máquina",
+        "description": "Descripción",
+        "moreInfo": "Otros datos relevantes",
+        "workingFromDate": "Fecha Puesta en Marcha",
+        "lastMaintenanceDate": "Fecha del último mantenimiento",
+        "nextMaintenanceDate": "Fecha del próximo mantenimiento",
+        "plant": "Planta",
+        "area": "Área",
+        "sublevel": "Subnivel",
+        "provider": "Proveedor"
+      },
+      "component": {
+        "deleteComponentConfirmation": "¿Seguro desea eliminar el componente?",
+        "new_title": "Ingresar Componentes",
+        "edit_title": "Editar Componentes"
+      },
+      "piece": {
+        "deleteComponentConfirmation": "¿Seguro desea eliminar la pieza?",
+        "new_title": "Ingresar Piezas",
+        "edit_title": "Editar Piezas"
+      },
+      "delete": {
+        "title": "Eliminar máquina",
+        "subtitle": "¿Seguro deseas eliminar la máquina?"
+      },
+      "detail": {
+        "files": {
+          "title": "Archivos"
+        }
+      }
+    },
+    "faults": {
+      "list": {
+        "noDataReturned": "No existen fallas"
+      },
+      "detail": {
+        "related_files": {
+          "title": "Archivos"
+        }
+      },
+      "new": {
+        "createdSuccessfully": "Se guardó la falla correctamente",
+        "deleteVoiceRecord": "¿Seguro deseas eliminar este audio?",
+        "errorOnCreation": "No se ha podido crear la falla correctamente",
+        "name": "Título de la falla",
+        "title": "Reportar Falla",
+        "date": "Fecha de la falla",
+        "machine": "Máquina",
+        "componentId": "Componente",
+        "pieceId": "Pieza",
+        "analyzed_measures": "Mediciones Analizadas",
+        "priority": "Prioridad",
+        "state": "Estado",
+        "start_date_time": "Fecha de la Falla",
+        "end_date_time": "Fecha de Resolución",
+        "type": "Clasificación",
+        "description": "Descripción",
+        "fault_number": "Número de Falla",
+        "stage": "Etapa del proceso",
+        "resolutionDate": "Fecha de Resolución",
+        "moreInfo": "Otros datos relevantes",
+        "responsibleId": "Usuario Responsable",
+        "reporters": "Usuarios relatores",
+        "clasification": "Clasificación",
+        "files": "Archivos Adjuntos",
+        "are_measures": "Hay Mediciones?",
+        "relevant_data": "Otros Datos Relevantes",
+        "consequences": "Consecuencias",
+        "submit": "Guardar"
+      }
+    },
+    "causes": {
+      "cause": {
+        "new_title": "Ingresar Causa",
+        "edit_title": "Editar Causa",
+        "cancel_btn": "Cancelar",
+        "save_btn": "Guardar",
+        "name": "Nombre",
+        "status": "Estado",
+        "description": "Descripción",
+        "requested_by": "Reportada Por",
+        "reason": "Motivo",
+        "relevant_data": "Otros Datos Relevantes"
+      }
+    },
+    "solutions": {
+      "new": {
+        "title": "Ingresar Solución",
+        "name": "Nombre Interno",
+        "relevant_data": "Otros Datos Relevantes",
+        "description": "Descripción",
+        "cause": "Asociar a la Causa",
+        "files": "Archivos Adjuntos",
+        "status": "Estado",
+        "requestedId": "Solicitada Por",
+        "submit": "Crear Solución",
+        "submit_with_methods": "Crear e Insertar Métodos",
+        "success": "Solución ingresada correctamente",
+        "error": "No se pudieron guardar los datos de solución"
+      },
+      "detail": {
+        "methods": {
+          "title": "Métodos de la Solución",
+          "add_method_btn": "Nuevo Método",
+          "error_message": "No se han encontrado  métodos relacionados a la solución"
+        },
+        "approval_btn": "Aprobar",
+        "reject_btn": "Rechazar",
+        "resend_btn": "Reenviar",
+        "reject_modal_title": "Rechazar Solución",
+        "approval_prompt": "¿Desea aprobar esta solución?",
+        "approval_success": "Se ha aprobado correctamente",
+        "approval_error": "No se ha podido aprobar la solución",
+        "reject_success": "Se ha rechazado la solución",
+        "reject_error": "No se ha podido rechazar la solución",
+        "resend_prompt": "¿Desea reenviar la solución?",
+        "resend_success": "Se ha reenviado correctamente",
+        "resend_error": "No se ha podido reenviar la solución",
+        "detail_title": "Detalles",
+        "name": "Nombre Interno",
+        "relevant_data": "Otros Datos Relevantes",
+        "description": "Descripción",
+        "status": "Estado",
+        "requestedId": "Solicitada Por",
+        "error_message": "No se encontró la solución",
+        "delete_prompt": "¿Seguro desea eliminar la solución?",
+        "delete_successful": "Solución eliminada correctamente",
+        "delete_error": "Ocurrió un error al eliminar la solución",
+        "edit_btn": "Editar",
+        "delete_btn": "Eliminar",
+        "related_files": {
+          "error_message": "No se han encontrado archivos relacionados a la solución",
+          "title": "Archivos"
+        }
+      },
+      "edit": {
+        "title": "Editar Solución",
+        "name": "Nombre Interno",
+        "relevant_data": "Otros Datos Relevantes",
+        "description": "Descripción",
+        "cause": "Asociar a la Causa",
+        "requestedId": "Solicitada Por",
+        "files": "Archivos Adjuntos",
+        "status": "Estado",
+        "submit": "Guardar",
+        "success": "Solución guardada correctamente",
+        "error": "No se pudieron guardar los datos de solución",
+        "error_message": "No se ha encontrado la solución"
+      },
+      "list": {
+        "title": "Lista de Soluciones",
+        "name": "Nombre Interno",
+        "status": "Estado",
+        "description": "Descripción",
+        "not_found": "No se encontraron soluciones en el sistema",
+        "action": {
+          "title": "Acciones",
+          "edit": "Editar",
+          "view": "Ver"
+        }
+      }
+    },
+    "methods": {
+      "detail": {
+        "detail_title": "Detalles",
+        "name": "Nombre Interno",
+        "description": "Descripción",
+        "solutionId": "Asociado a la Solución",
+        "error_message": "No se encontró la solución",
+        "delete_prompt": "¿Seguro desea eliminar la solución?",
+        "delete_successful": "Solución eliminada correctamente",
+        "delete_error": "Ocurrió un error al eliminar la solución",
+        "edit_btn": "Editar",
+        "delete_btn": "Eliminar",
+        "related_files": {
+          "error_message": "No se han encontrado archivos relacionados al método",
+          "title": "Archivos"
+        }
+      },
+      "newMethod": {
+        "title": "Nuevo Método",
+        "solution": "Asociar a la solución",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "name": "Nombre",
+        "description": "Descripción"
+      },
+      "editMethod": {
+        "title": "Editar Método"
+      }
+    },
+    "register": {
+      "form": {
+        "title": "Registro de Usuario",
+        "name": "Nombre de Usuario",
+        "email": "Email",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "role": "Rol",
+        "submit_btn": "Guardar",
+        "cancel_btn": "Cancelar",
+        "submit_success": "Se envió un email para finalizar el registro",
+        "submit_error": "No se ha podido registrar el usuario"
+      }
+    },
+    "reset_password": {
+      "confirm_register_form": {
+        "title": "Confirmar Registro",
+        "name": "Nombre de Usuario",
+        "password": "Contraseña",
+        "repeated_password": "Repetir Contraseña",
+        "submit_btn": "Confirmar",
+        "cancel_btn": "Cancelar",
+        "submit_success": "Se ha confirmado el registro",
+        "submit_error": "No se ha podido confirmar el registro"
+      },
+      "form": {
+        "title": "Recuperar Contraseña",
+        "name": "Nombre de Usuario",
+        "password": "Contraseña",
+        "repeated_password": "Repetir Contraseña",
+        "submit_btn": "Recuperar",
+        "cancel_btn": "Cancelar",
+        "submit_success": "Se ha recuperado la contraseña",
+        "submit_error": "No se ha podido recuperar la contraseña"
+      }
+    },
+    "forget_password": {
+      "form": {
+        "title": "Recuperar Contraseña",
+        "email": "Email",
+        "submit_btn": "Recuperar",
+        "cancel_btn": "Cancelar",
+        "submit_success": "Se ha enviado un email",
+        "submit_error": "No se ha podido recuperar la contraseña"
+      }
+    },
+    "users": {
+      "list": {
+        "name": "Nombre",
+        "email": "Email",
+        "role": "Rol",
+        "isActive": "Estado",
+        "reset_password_title": "Recuperar Contraseña",
+        "enable_title": "Activar Usuario",
+        "disable_title": "Desactivar Usuario",
+        "disable_user_success": "El usuario ha sido desactivado",
+        "disable_user_error": "No se ha podido desactivar el usuario",
+        "reset_password_success": "Se ha enviado un email al usuario",
+        "reset_password_error": "No se ha podido enviar el email al usuario",
+        "disable_user_confirmation": "Seguro que desea desactivar el usuario ${name} (${email})?",
+        "enable_user_confirmation": "Seguro que desea reactivar el usuario ${name} (${email})?",
+        "disable_user_btn": "Si, desactivar",
+        "enable_user_btn": "Si, reactivar",
+        "cancel_btn": "Cancelar",
+        "reset_password_confirmation": "Se enviará un email al usuario ${name} (${email})",
+        "reset_password_disabled_user": "El usuario ${name} no está activo. Por favor, actívelo antes de setear una nueva contraseña",
+        "reset_password_btn": "Si, resetear",
+        "register_user_btn": "Registrar Usuario",
+        "not_found": "No se encontraron usuarios en el sistema",
+        "action": {
+          "title": "Acciones"
+        }
+      }
+    },
+    "tasks": {
+      "form": {
+        "new_title": "Nueva Tarea",
+        "edit_title": "Editar Tarea",
+        "name": "Nombre",
+        "description": "Descripción",
+        "reason": "Motivo",
+        "start_date": "Fecha de Inicio",
+        "deadline": "Fecha de Fin",
+        "status": "Estado",
+        "responsibleId": "Asignado A",
+        "requestedId": "Solicitado Por",
+        "completed_date": "Fecha de Completado",
+        "machineId": "Máquina",
+        "componentId": "Componente",
+        "pieceId": "Pieza",
+        "submit_btn": "Guardar",
+        "cancel_btn": "Cancelar",
+        "submit_success": "Guardado correctamente",
+        "submit_error": "Ocurrión un error al guardar los datos"
+      },
+      "detail": {
+        "detail_title": "Detalles",
+        "name": "Nombre",
+        "description": "Descripción",
+        "reason": "Motivo",
+        "start_date": "Fecha de Inicio",
+        "deadline": "Fecha Límite Estimada",
+        "status": "Estado",
+        "responsibleId": "Asignado A",
+        "requestedId": "Solicitado Por",
+        "completed_date": "Fecha de Completado",
+        "machineId": "Máquina",
+        "componentId": "Componente",
+        "pieceId": "Pieza",
+        "complete_task_btn": "Completar",
+        "edit_btn": "Editar",
+        "delete_btn": "Eliminar"
+      }
+    }
+  },
+  "components": {
+    "voiceModal": {
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "finishRecord": "Finalizar",
+      "startRecord": "Grabar",
+      "title": "Grabar Audio"
+    },
+    "detail": {
+      "detail_title": "Detalles",
+      "relevant_dates_title": "Fechas Importantes",
+      "edit_btn": "Editar",
+      "delete_btn": "Eliminar",
+      "user": "Responsable Mantenimiento",
+      "title": "Component",
+      "internal_name": "Nombre Interno",
+      "machine": "Máquina",
+      "make": "Marca",
+      "model": "Modelo",
+      "serie_number": "Número de Serie",
+      "type": "Tipo de Componente",
+      "component_state": "Estado del Componente",
+      "description": "Descripción",
+      "manufacture_type": "Tipo de Fabricación",
+      "working_from_date": "Fecha de Colocación",
+      "last_maintenance_date": "Fecha Último Mantenimiento",
+      "next_maintenance_date": "Fecha Próximo Mantenimiento",
+      "maintenance_responsible": "Responsable de Mantenimiento",
+      "manufacturer": "Fabricación",
+      "provider": "Proveedor",
+      "flat_number": "Número de Plano",
+      "relevant_data": "Otros Datos Relevantes",
+      "state": "Estado",
+      "purchase_number": "Número de Compra",
+      "notFound": "Componente no encontrado",
+      "files": "Archivos Adjuntos",
+      "neumatic_faults": "Fallas Neumáticas",
+      "hydraulic_faults": "Fallas Hidráulicas",
+      "electric_faults": "Fallas Eléctricas",
+      "mechanic_faults": "Fallas Mecánicas",
+      "pieces": {
+        "title": "Piezas del Componente",
+        "internal_name": "Nombre Interno",
+        "make": "Marca",
+        "model": "Modelo",
+        "machine": "Máquina",
+        "serie_number": "Número de Serie",
+        "type": "Tipo de Componente",
+        "component_state": "Estado",
+        "description": "Descripción",
+        "manufacturer_type": "Tipo de Fabricación",
+        "working_from_date": "Fecha de Colocación",
+        "maintenance_responsible": "Responsable de Mantenimiento",
+        "manufacturer": "Fabricante",
+        "provider": "Proveedor",
+        "flat_number": "Número de Plano",
+        "relevant_data": "Otros Datos Relevantes",
+        "not_found": "No se ha encontrado el componente",
+        "error_message": "No se han encontrado piezas relacionadas al componente"
+      },
+      "studies": {
+        "title": "Estudios del Componente",
+        "internal_name": "Nombre Interno",
+        "piece": "Pieza",
+        "reason": "Motivo",
+        "error_message": "No se han encontrado estudios relacionados al componente",
+        "add_btn": "Agregar"
+      },
+      "related_files": {
+        "title": "Archivos",
+        "error_message": "No se han encontrado archivos relacionados"
+      },
+      "faults": {
+        "add_fault_btn": "Reportar Falla",
+        "title": "Fallas del Componente",
+        "error_message": "No se han encontrado fallas relacionadas al componente",
+        "name": "Título",
+        "state": "Estado",
+        "date": "Fecha de Inicio de la falla",
+        "end_date": "Fecha de Fin de la falla",
+        "description": "Descripción"
+      },
+      "fieldsHistory": {
+        "title": "Historial",
+        "error_message": "No se han encontrado cambios en el componente",
+        "old_value": "Valor Anterior",
+        "new_value": "Valor Nuevo",
+        "date": "Fecha de Cambio",
+        "modified_by": "Modificado Por",
+        "field": "Campo"
+      }
+    }
+  },
+  "pieces": {
+    "detail": {
+      "edit_btn": "Editar",
+      "detail_title": "Detalles",
+      "title": "Piezas",
+      "component": "Componente",
+      "piece_type": "Tipo de Pieza",
+      "internal_name": "Nombre Interno",
+      "make": "Marca",
+      "model": "Modelo",
+      "machine": "Máquina",
+      "serie_number": "Número de Serie",
+      "description": "Descripción",
+      "manufacturer_type": "Tipo de Fabricación",
+      "working_from_date": "Fecha de Colocación",
+      "user": "Responsable de Mantenimiento",
+      "manufacturer": "Fabricante",
+      "provider": "Proveedor",
+      "state": "Estado",
+      "specifications": "Especificaciones",
+      "flat_number": "Número de Plano",
+      "relevant_data": "Otros Datos Relevantes",
+      "not_found": "No se ha encontrado el componente",
+      "identifier": "Identificador",
+      "files": "Archivos Adjuntos",
+      "studies": {
+        "title": "Estudios de la Pieza",
+        "internal_name": "Nombre Interno",
+        "reason": "Motivo",
+        "add_btn": "Agregar",
+        "error_message": "No se han encontrado estudios relacionados a la pieza",
+        "component": "Componente"
+      },
+      "related_files": {
+        "title": "Archivos",
+        "error_message": "No se han encontrado archivos relacionados a la pieza"
+      },
+      "faults": {
+        "add_fault_btn": "Reportar Falla",
+        "title": "Fallas de la Pieza",
+        "error_message": "No se han encontrado fallas relacionadas a la pieza",
+        "name": "Título",
+        "state": "Estado",
+        "date": "Fecha de la falla",
+        "description": "Descripción"
+      },
+      "fieldsHistory": {
+        "title": "Historial",
+        "error_message": "No se han encontrado cambios en la pieza",
+        "old_value": "Valor Anterior",
+        "new_value": "Valor Nuevo",
+        "date": "Fecha de Cambio",
+        "modified_by": "Modificado Por",
+        "field": "Campo"
+      }
+    }
+  },
+  "study": {
+    "detail": {
+      "detail_title": "Detalles",
+      "internal_name": "Nombre Interno",
+      "component": "Componente",
+      "piece": "Pieza",
+      "reason_title": "Motivo",
+      "user": "Creado por",
+      "date": "Fecha",
+      "edit_btn": "Editar",
+      "delete_btn": "Eliminar"
+    },
+    "files": {
+      "error_message": "No se han encontrado archivos relacionados"
+    },
+    "new": {
+      "new_title": "Nuevo Estudio",
+      "edit_title": "Editar Estudio",
+      "internal_name": "Nombre Interno",
+      "reason": "Motivo",
+      "date": "Fecha del Estudio",
+      "component": "Componente",
+      "piece": "Pieza",
+      "files": "Archivos Adjuntos",
+      "save_and_return_btn": "Guardar y Volver",
+      "save_btn": "Guardar",
+      "cancel_btn": "Cancelar"
+    }
+  },
+  "machines": {
+    "detail": {
+      "related_files": {
+        "title": "Archivos",
+        "error_message": "No se han encontrado archivos relacionados a la máquina"
+      }
+    }
+  },
+  "faults": {
+    "detail": {
+      "create_new_task_btn": "Tarea Seguimiento",
+      "add_cause_btn": "Asociar Causas",
+      "edit_btn": "Editar",
+      "delete_btn": "Eliminar",
+      "resolve_fault_btn": "Resolver Falla",
+      "delete_error": "Error al eliminar la falla",
+      "delete_success": "Falla eliminada correctamente",
+      "detail_title": "Detalles",
+      "users_title": "Usuarios",
+      "measures_title": "Mediciones",
+      "consequences_title": "Consecuencias",
+      "relevant_data_title": "Datos Relevantes",
+      "name": "Título de la falla",
+      "state": "Estado",
+      "date": "Fecha de Inicio de la falla",
+      "end_date": "Fecha de Fin de la falla",
+      "resolution_date": "Fecha de resolución",
+      "description": "Descripción",
+      "machine": "Máquina",
+      "component": "Componente",
+      "piece": "Pieza",
+      "reporting_users": "Usuarios Relatores",
+      "responsible": "Usuario Responsable",
+      "fault_number": "Número de Falla",
+      "clasification": "Clasificación",
+      "priority": "Prioridad",
+      "stage": "Etapa del proceso",
+      "are_measures": "¿Hay Mediciones?",
+      "related_files": {
+        "title": "Archivos",
+        "error_message": "No existen archivos"
+      },
+
+      "analyzed_measures": "Mediciones Analizadas",
+      "consequences": "Consecuencias",
+      "relevant_data": "Otros Datos Relevantes",
+      "files": {
+        "error_message": "No se han encontrado archivos relacionados a la falla"
+      },
+      "relatedCauses": {
+        "title": "Causas de la Falla",
+        "error_message": "No se han encontrado causas relacionadas a la falla",
+        "add_cause_btn": "Asociar Causas"
+      }
+    }
+  },
+  "causes": {
+    "detail": {
+      "edit_btn": "Editar",
+      "resend_btn": "Reenviar",
+      "delete_btn": "Eliminar",
+      "delete_error": "Error al eliminar la causa",
+      "delete_success": "Causa eliminada correctamente",
+      "name": "Nombre",
+      "description": "Descripción",
+      "user": "Reportada Por",
+      "status": "Estado",
+      "reason": "Motivo",
+      "relevant_data": "Otros Datos Relevantes",
+      "detail_title": "Detalles",
+      "reason_title": "Motivo",
+      "relevant_data_title": "Datos Relevantes",
+      "not_found": "No se ha encontrado la causa",
+      "faults": {
+        "title": "Fallas",
+        "add_fault_btn": "Agregar Falla",
+        "name": "Nombre",
+        "state": "Estado",
+        "date": "Fecha de la falla",
+        "description": "Descripción",
+        "error_message": "No se han encontrado fallas relacionadas a la causa"
+      },
+      "solutions": {
+        "title": "Soluciones",
+        "error_message": "No se han encontrado soluciones relacionadas a la causa",
+        "add_solution_btn": "Nueva Solución"
+      }
+    }
+  }
+}
